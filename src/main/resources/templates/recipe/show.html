@@ -49,7 +49,7 @@
                                 <h5>Difficulty:</h5>
                             </div>
                             <div class="col-md-3">
-                                <p th:text="${recipe.getDifficulty().name()}">Easy</p>
+                                <p th:text="${recipe.getDifficulty()}">Easy</p>
                             </div>
                         </div>
                         <div class="row">
@@ -92,7 +92,7 @@
                                 <ul>
                                     <li th:remove="all">ing one</li>
                                     <li th:remove="all">ing two</li>
-                                    <li th:each="ingredient : ${recipe.ingredients}" th:text="${ingredient.getAmount() + '   ' + ingredient.getDescription()}">cat three</li>
+                                    <li th:each="ingredient : ${recipe.ingredients}" th:text="${ingredient.getAmount() + ' '  + ingredient.getUom().getDescription() + ' ' + ingredient.getDescription()}">cat three</li>
                                 </ul>
                             </div>
                         </div>
